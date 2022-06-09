@@ -1,22 +1,14 @@
-game.StarterGui:SetCore("SendNotification", {
-		Title = "vaifuzz#3511",
-		Text = "Loaded (Q) To Aimlock",
-		Icon = "http://www.roblox.com/asset/?id=8850953349",
-		Duration = 30,
-
-})
-
 local settings = {
     main = {
-        DotEnabled = true, 
-        Prediction = 0.131841,
+        DotEnabled = true, -- leave this true thusky pooh ;)
+        Prediction = 0.11621,
         Part = "LowerTorso",
-        Key = "e",
+        Key = "c",
         Notifications = true,
         AirshotFunc = false
     },
     Dot = {
-        Show = false,
+        Show = true,
         Color = Color3.fromRGB(128, 0, 128),
         Size = Vector3.new(0.9, 1.2, 0.9)
     }
@@ -53,9 +45,8 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             if settings.main.Notifications == true then
                 Plr = FindClosestUser()
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "Bulk.lua",
-                    Text = "Unlocked",
-                    Icon = "http://www.roblox.com/asset/?id=8850953349",
+                    Title = "Private Script",
+                    Text = "No longer locked on"
                 })
             end
         else
@@ -63,9 +54,8 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             settings.main.DotEnabled = true
             if settings.main.Notifications == true then
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "Bulk.lua",
-                    Text = "Locked on to; " .. tostring(Plr.Character.Humanoid.DisplayName),
-                    Icon = "http://www.roblox.com/asset/?id=8850953349",
+                    Title = "Private Script",
+                    Text = "Locked on to:" .. tostring(Plr.Character.Humanoid.DisplayName)
                 })
             end
         end
@@ -127,5 +117,4 @@ if settings.main.AirshotFunc == true then
         end)
     end
 end
-
 
